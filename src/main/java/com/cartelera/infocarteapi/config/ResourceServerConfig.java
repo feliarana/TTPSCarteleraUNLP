@@ -45,16 +45,16 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     return defaultTokenServices;
   }
 
-//  @Override
-//  public void configure(HttpSecurity http) throws Exception {
-//    http
-//      .headers()
-//      .frameOptions()
-//      .disable()
-//      .and()
-//      .authorizeRequests()
-//      .antMatchers("/","/home","/login").permitAll()
-//      .antMatchers("/backend/**").authenticated();
-//  }
+  @Override
+  public void configure(HttpSecurity http) throws Exception {
+    http
+      .headers()
+      .frameOptions()
+      .disable()
+      .and()
+      .authorizeRequests()
+      .antMatchers("/","/login").permitAll()
+      .antMatchers("/admin/**","/user/**").authenticated();
+  }
 
 }
