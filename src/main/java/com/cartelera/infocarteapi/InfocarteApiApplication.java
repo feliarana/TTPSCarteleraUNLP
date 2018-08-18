@@ -1,6 +1,6 @@
 package com.cartelera.infocarteapi;
 
-import com.cartelera.infocarteapi.model.Billboard;
+import com.cartelera.infocarteapi.entities.Billboard;
 import com.cartelera.infocarteapi.repository.BillboardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
