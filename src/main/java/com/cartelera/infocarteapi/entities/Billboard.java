@@ -1,4 +1,4 @@
-package com.cartelera.infocarteapi.model;
+package com.cartelera.infocarteapi.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

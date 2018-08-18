@@ -1,39 +1,34 @@
-package com.cartelera.infocarteapi.model;
+package com.cartelera.infocarteapi.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Data
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
 @Entity
 //@Table(name = "user")
 //@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
-  private static final long serialVersionUID = 1L;
   @Id
   @GeneratedValue
-  private int id;
-//  private String username;
-//  private String password;
-//  private String email;
-//  private int phone;//en caso que tenga wsp se utilizara esta infomacion
+  private long id;
+  private String username;
+  private String password;
+  private String email;
+  private int phone;
+//  @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//  private List<Role> roles;
+
+// ;//en caso que tenga wsp se utilizara esta infomacion
 
 //  @OneToMany(mappedBy = "post")//un usuario tiene muchas publicaciones
 //  private List<Post> publicaciones;
