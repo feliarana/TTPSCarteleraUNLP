@@ -9,7 +9,7 @@ public class HomeController {
     return "Hola home";
   }
 
-  @GetMapping(value = "/perfil")
+  @GetMapping(value = "/backend")
   public String backend(){
     return "Hola back";
   }

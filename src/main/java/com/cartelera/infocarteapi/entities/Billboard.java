@@ -15,11 +15,7 @@ import javax.validation.constraints.NotNull;
 @Builder
 @AllArgsConstructor
 @Entity
-public class Billboard {
-  @Id
-  @GeneratedValue
-  private long id;
-
+public class Billboard extends BaseEntity{
   @NotNull
   private String title;
 }
