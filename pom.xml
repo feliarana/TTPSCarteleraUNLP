@@ -5,7 +5,7 @@
 
   <groupId>com.cartelera</groupId>
   <artifactId>infocarte-api</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2</version>
   <packaging>jar</packaging>
 
   <name>infocarte-api</name>
@@ -56,6 +56,18 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+    <!--autenticacion oauth-->
+    <dependency>
+      <groupId>org.springframework.security.oauth</groupId>
+      <artifactId>spring-security-oauth2</artifactId>
+      <version>2.3.3.RELEASE</version>
+    </dependency>
+    <!--jwt-->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-jwt</artifactId>
+      <version>1.0.9.RELEASE</version>
+    </dependency>
     <!--h2 y mysql database-->
     <dependency>
       <groupId>com.h2database</groupId>
@@ -73,6 +85,12 @@
       <artifactId>lombok</artifactId>
       <optional>true</optional>
     </dependency>
+    <!--randomAlphabetic -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.3.2</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -83,6 +101,5 @@
       </plugin>
     </plugins>
   </build>
-
 
 </project>
