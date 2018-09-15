@@ -35,7 +35,8 @@ public class  InfocarteApiApplication {
           billboardRepo.save(Billboard.builder().title("4to").build());
           billboardRepo.save(Billboard.builder().title("5to").build());
           billboardRepo.save(Billboard.builder().title("Oportunidades").build());
-          billboardRepo.save(Billboard.builder().title("Otros").build());
+          billboardRepo.save(Billboard.builder().title("Ofertas laborales").build());
+
         }
     }
 
