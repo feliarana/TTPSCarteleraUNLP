@@ -1,11 +1,8 @@
-package com.cartelera.infocarteapi.entities;
+package com.cartelera.infocarteapi.model;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
+
 import lombok.Getter;
 
 /**
@@ -17,6 +14,6 @@ import lombok.Getter;
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class BaseEntity implements Serializable {
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private Long id;
 }

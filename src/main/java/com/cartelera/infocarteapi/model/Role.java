@@ -1,6 +1,7 @@
-package com.cartelera.infocarteapi.entities;
+package com.cartelera.infocarteapi.model;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,8 +14,14 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@Table(name="role")
 public class Role extends BaseEntity{
 
-  private String name;
+  @Id
+  @Column(name = "id")
+  private Long id;
+
+  @Column(name = "role_name")
+  private String roleName;
 
 }

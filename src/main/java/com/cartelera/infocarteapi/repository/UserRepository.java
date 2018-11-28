@@ -1,6 +1,6 @@
 package com.cartelera.infocarteapi.repository;
 
-import com.cartelera.infocarteapi.entities.User;
+import com.cartelera.infocarteapi.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,10 +1,10 @@
 package com.cartelera.infocarteapi;
 
-import com.cartelera.infocarteapi.entities.Billboard;
-import com.cartelera.infocarteapi.entities.Role;
-import com.cartelera.infocarteapi.entities.User;
+import com.cartelera.infocarteapi.model.Billboard;
+import com.cartelera.infocarteapi.model.Role;
+import com.cartelera.infocarteapi.model.User;
 import com.cartelera.infocarteapi.repository.BillboardRepository;
-import com.cartelera.infocarteapi.service.UserService;
+import com.cartelera.infocarteapi.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -40,17 +40,17 @@ public class  InfocarteApiApplication {
         }
     }
 
-  @Bean
-  public CommandLineRunner setupDefaultUser(UserService service) {
-    return args -> {
-      service.save(new User(
-        "root", //username
-        "root", //password
-        Arrays.asList(new Role("USER"), new Role("ACTUATOR")),//roles
-        true//Active
-      ));
-    };
-  }
+//  @Bean
+//  public CommandLineRunner setupDefaultUser(UserDetailsServiceImpl service) {
+//    return args -> {
+//      service.save(new User(
+//        "root", //username
+//        "root", //password
+//        Arrays.asList(new Role("ROLE_USER"), new Role("ROLE_ACTUATOR")),//roles
+//        true//Active
+//      ));
+//    };
+//  }
 
   @Bean
   public PasswordEncoder getPasswordEncoder(){
