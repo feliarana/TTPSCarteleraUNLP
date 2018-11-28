@@ -1,4 +1,4 @@
-package com.cartelera.infocarteapi.entities;
+package com.cartelera.infocarteapi.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,11 +15,18 @@ import javax.persistence.*;
 @Builder
 @AllArgsConstructor
 @Entity
-//@Table(name = "user")
-//@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "user")
 public class User extends BaseEntity {
+  @Id
+  @Column
+  private Long id;
+
+  @Column
   private String username;
+
+  @Column
   private String password;
+
   @OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
   private List<Role> roles;
   private boolean active;
