@@ -36,6 +36,16 @@ public class User {
 
   private Date updated_at;
 
+  @PrePersist
+  protected void onCreate() {
+    created_at = new Date();
+  }
+
+  @PreUpdate
+  protected void onUpdate() {
+    updated_at = new Date();
+  }
+
   @ManyToMany(cascade = {
     CascadeType.PERSIST,
     CascadeType.MERGE
@@ -50,33 +60,27 @@ public class User {
   @OneToMany(mappedBy = "created_by")
   private List<Billboard> createdBillboard = new ArrayList<Billboard>();
 
-  @ManyToMany(cascade = { CascadeType.ALL })
+  @ManyToMany(cascade = {CascadeType.ALL})
   @JoinTable(
     name = "followed_billboards",
-    joinColumns = { @JoinColumn(name = "user_id") },
-    inverseJoinColumns = { @JoinColumn(name = "billboard_id") }
+    joinColumns = {@JoinColumn(name = "user_id")},
+    inverseJoinColumns = {@JoinColumn(name = "billboard_id")}
   )
   private List<Billboard> followedBillboards = new ArrayList<Billboard>();
 
-  @ManyToMany(cascade = { CascadeType.ALL })
+  @ManyToMany(cascade = {CascadeType.ALL})
   @JoinTable(
     name = "liked_billboards",
-    joinColumns = { @JoinColumn(name = "user_id") },
-    inverseJoinColumns = { @JoinColumn(name = "billboard_id") }
+    joinColumns = {@JoinColumn(name = "user_id")},
+    inverseJoinColumns = {@JoinColumn(name = "billboard_id")}
   )
   private List<Billboard> likedBillboards = new ArrayList<Billboard>();
 
+  @OneToMany(mappedBy="user")
+  private Set<Post> posts;
 
-  @PrePersist
-  protected void onCreate() {
-    created_at = new Date();
-  }
-
-  @PreUpdate
-  protected void onUpdate() {
-    updated_at = new Date();
-  }
-
+  @OneToMany(mappedBy="user")
+  private Set<Comment> comments;
 
   public <T> User(String username, String password, Set<Role> roles, boolean active) {
     this.username = username;
