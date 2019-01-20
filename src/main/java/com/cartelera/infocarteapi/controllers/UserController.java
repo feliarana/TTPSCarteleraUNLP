@@ -12,7 +12,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+//@RequestMapping("/api")
 public class UserController {
 
   @Autowired
@@ -21,14 +21,14 @@ public class UserController {
 
   private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
-  @GetMapping("/user/me")
+  @GetMapping("/users/me")
 //  @PreAuthorize("hasRole('ROLE_USER')")
   public UserSummary getCurrentUser(@CurrentUser UserPrincipal currentUser) {
     UserSummary userSummary = new UserSummary(currentUser.getId(), currentUser.getUsername(), currentUser.getAuthorities());
     return userSummary;
   }
 
-  @GetMapping("/user/checkUsernameAvailability")
+  @GetMapping("/users/check_username_availability")
   public UserIdentityAvailability checkUsernameAvailability(@RequestParam(value = "username") String username) {
     Boolean isAvailable = !userRepository.existsByUsername(username);
     return new UserIdentityAvailability(isAvailable);

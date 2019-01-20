@@ -1,18 +1,17 @@
 package com.cartelera.infocarteapi.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Getter
-@Setter
-@Entity
+@Data
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
+@Entity
 @Table(name = "posts")
 public class Post {
   @Id
@@ -25,6 +24,9 @@ public class Post {
   private Date created_at;
 
   private Date updated_at;
+
+  @Column
+  private Boolean comments_enabled;
 
   @PrePersist
   protected void onCreate() {
