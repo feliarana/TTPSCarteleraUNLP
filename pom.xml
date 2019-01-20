@@ -96,12 +96,12 @@
       <version>3.3.2</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
-    <dependency>
-      <groupId>org.yaml</groupId>
-      <artifactId>snakeyaml</artifactId>
-      <version>1.23</version>
-    </dependency>
+    <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.yaml/snakeyaml &ndash;&gt;-->
+    <!--<dependency>-->
+      <!--<groupId>org.yaml</groupId>-->
+      <!--<artifactId>snakeyaml</artifactId>-->
+      <!--<version>1.23</version>-->
+    <!--</dependency>-->
 
     <!-- For Java 8 Date/Time Support -->
     <dependency>
