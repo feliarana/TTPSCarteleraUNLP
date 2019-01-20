@@ -1,15 +1,15 @@
 package com.cartelera.infocarteapi.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
-@Getter
-@Setter
-@Entity
+@Data
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
+@Entity
 @Table(name = "comments")
 public class Comment {
   @Id
@@ -23,5 +23,7 @@ public class Comment {
   @ManyToOne
   @JoinColumn(name = "user_id", nullable = false)
   private User user;
+
+  private String content;
 
 }
