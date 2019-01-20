@@ -8,20 +8,26 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString
-@Table(name="role")
-public class Role extends BaseEntity{
-
+@Table(name="roles")
+public class Role {
   @Id
-  @Column(name = "id")
+  @GeneratedValue
   private Long id;
 
   @Column(name = "role_name")
   private String roleName;
+
+  @ManyToMany(mappedBy = "roles")
+  private Set<User> users = new HashSet<>();
 
 }
