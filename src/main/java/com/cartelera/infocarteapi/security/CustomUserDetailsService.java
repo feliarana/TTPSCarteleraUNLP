@@ -1,8 +1,9 @@
 package com.cartelera.infocarteapi.security;
 
-import com.example.polls.exception.ResourceNotFoundException;
-import com.example.polls.model.User;
-import com.example.polls.repository.UserRepository;
+import com.cartelera.infocarteapi.exception.ResourceNotFoundException;
+import com.cartelera.infocarteapi.model.User;
+import com.cartelera.infocarteapi.repository.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -22,12 +23,12 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     @Transactional
-    public UserDetails loadUserByUsername(String usernameOrEmail)
+    public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
         // Let people login with either username or email
-        User user = userRepository.findByUsernameOrEmail(usernameOrEmail, usernameOrEmail)
+        User user = userRepository.findByUsername(username)
                 .orElseThrow(() ->
-                        new UsernameNotFoundException("User not found with username or email : " + usernameOrEmail)
+                        new UsernameNotFoundException("User not found with username: " + username)
         );
 
         return UserPrincipal.create(user);

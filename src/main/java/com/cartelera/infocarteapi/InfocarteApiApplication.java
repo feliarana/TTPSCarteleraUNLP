@@ -1,5 +1,11 @@
 package com.cartelera.infocarteapi;
 
+import com.cartelera.infocarteapi.exception.AppException;
+import com.cartelera.infocarteapi.model.Role;
+import com.cartelera.infocarteapi.model.User;
+import com.cartelera.infocarteapi.repository.RoleRepository;
+import com.cartelera.infocarteapi.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -19,6 +25,13 @@ public class InfocarteApiApplication {
   void init() {
     TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
   }
+
+
+  @Autowired
+  UserRepository userRepository;
+
+  @Autowired
+  RoleRepository roleRepository;
 
   public static void main(String[] args) {
     SpringApplication.run(InfocarteApiApplication.class, args);
