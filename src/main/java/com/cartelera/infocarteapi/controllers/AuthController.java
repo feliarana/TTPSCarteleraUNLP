@@ -24,12 +24,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.util.Collections;
 
-/**
- * Created by rajeevkumarsingh on 02/08/17.
- */
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -50,7 +48,7 @@ public class AuthController {
   JwtTokenProvider tokenProvider;
 
   @PostMapping("/signin")
-  public ResponseEntity<?> authenticateUser(@Valid LoginRequest loginRequest) {
+  public ResponseEntity<?> authenticateUser(@Valid LoginRequest loginRequest) throws UnsupportedEncodingException {
 
     Authentication authentication = authenticationManager.authenticate(
       new UsernamePasswordAuthenticationToken(

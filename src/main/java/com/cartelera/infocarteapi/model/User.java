@@ -2,17 +2,12 @@ package com.cartelera.infocarteapi.model;
 
 import lombok.*;
 
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
-
-
-//@Data
-//@Builder
-//@NoArgsConstructor
 
 @Getter
 @Setter
@@ -24,11 +19,6 @@ import javax.persistence.*;
   }),
 })
 public class User {
-//  @Id
-//  @GeneratedValue(strategy = GenerationType.IDENTITY)
-//  @Column(name = "id", unique = true, nullable = false)
-//  private Long id;
-//
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
@@ -39,6 +29,13 @@ public class User {
   @Column
   private String password;
 
+  @Column
+  private boolean active;
+
+  private Date created_at;
+
+  private Date updated_at;
+
   @ManyToMany(cascade = {
     CascadeType.PERSIST,
     CascadeType.MERGE
@@ -48,12 +45,40 @@ public class User {
     joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
     inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")}
   )
-  private Collections<Role> roles = new HashSet<>();
+  private Set<Role> roles;
 
-  @Column
-  private boolean active;
+  @OneToMany(mappedBy = "created_by")
+  private List<Billboard> createdBillboard = new ArrayList<Billboard>();
 
-  public <T> User(String username, String password, Set<T> roles, boolean active) {
+  @ManyToMany(cascade = { CascadeType.ALL })
+  @JoinTable(
+    name = "followed_billboards",
+    joinColumns = { @JoinColumn(name = "user_id") },
+    inverseJoinColumns = { @JoinColumn(name = "billboard_id") }
+  )
+  private List<Billboard> followedBillboards = new ArrayList<Billboard>();
+
+  @ManyToMany(cascade = { CascadeType.ALL })
+  @JoinTable(
+    name = "liked_billboards",
+    joinColumns = { @JoinColumn(name = "user_id") },
+    inverseJoinColumns = { @JoinColumn(name = "billboard_id") }
+  )
+  private List<Billboard> likedBillboards = new ArrayList<Billboard>();
+
+
+  @PrePersist
+  protected void onCreate() {
+    created_at = new Date();
+  }
+
+  @PreUpdate
+  protected void onUpdate() {
+    updated_at = new Date();
+  }
+
+
+  public <T> User(String username, String password, Set<Role> roles, boolean active) {
     this.username = username;
     this.password = password;
     this.roles = roles;
