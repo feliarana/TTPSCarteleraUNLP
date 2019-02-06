@@ -25,6 +25,10 @@ public class Billboard {
   @NotNull
   private String title;
 
+  private String description;
+
+  private String image;
+
   private Date created_at;
 
   private Date updated_at;
