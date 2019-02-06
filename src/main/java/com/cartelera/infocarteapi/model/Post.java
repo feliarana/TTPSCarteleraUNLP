@@ -57,4 +57,6 @@ public class Post {
 
   @OneToMany(mappedBy = "user")
   private List<Comment> comments = new ArrayList<Comment>();
+
+
 }
