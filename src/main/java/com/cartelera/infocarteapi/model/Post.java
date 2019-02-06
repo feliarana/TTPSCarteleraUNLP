@@ -1,5 +1,6 @@
 package com.cartelera.infocarteapi.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,8 +22,16 @@ public class Post {
   @Column
   private String title;
 
+  @Column
+  private String image;
+
+  @Column
+  private String description;
+
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
   private Date created_at;
 
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
   private Date updated_at;
 
   @Column

@@ -17,18 +17,18 @@ INSERT INTO billboards(created_at, title, description, image, updated_at, user_i
 INSERT INTO billboards(created_at, title, description, image, updated_at, user_id) VALUES(CURRENT_TIMESTAMP(), 'Cartelera 4to', 'Los tranka', 'https://sample-videos.com/img/Sample-jpg-image-500kb.jpg', NULL, '1');
 INSERT INTO billboards(created_at, title, description, image, updated_at, user_id) VALUES(CURRENT_TIMESTAMP(), 'Cartelera 5to', 'Los heroes', 'https://www.wonderplugin.com/videos/demo-image0.jpg', NULL, '1');
 -- Agregamos publicaciones
-INSERT INTO posts(billboard_id, comments_enabled, created_at, title, updated_at, user_id) VALUES('1', 1, CURRENT_TIMESTAMP(), 'Horarios 1', NULL, '21');
-INSERT INTO posts(billboard_id, comments_enabled, created_at, title, updated_at, user_id) VALUES('1', 1, CURRENT_TIMESTAMP(), 'Resultados Adp', NULL, '21');
-INSERT INTO posts(billboard_id, comments_enabled, created_at, title, updated_at, user_id) VALUES('1', 1, CURRENT_TIMESTAMP(), 'Resultados Arq', NULL, '21');
-INSERT INTO posts(billboard_id, comments_enabled, created_at, title, updated_at, user_id) VALUES('1', 1, CURRENT_TIMESTAMP(), 'Resultados Org', NULL, '21');
-INSERT INTO posts(billboard_id, comments_enabled, created_at, title, updated_at, user_id) VALUES('11', 1, CURRENT_TIMESTAMP(), 'Horarios 2', NULL, '21');
-INSERT INTO posts(billboard_id, comments_enabled, created_at, title, updated_at, user_id) VALUES('11', 1, CURRENT_TIMESTAMP(), 'Resultados Ibd', NULL, '21');
-INSERT INTO posts(billboard_id, comments_enabled, created_at, title, updated_at, user_id) VALUES('11', 1, CURRENT_TIMESTAMP(), 'Resultados Ing1', NULL, '21');
-INSERT INTO posts(billboard_id, comments_enabled, created_at, title, updated_at, user_id) VALUES('11', 1, CURRENT_TIMESTAMP(), 'Resultados Ayed', NULL, '21');
-INSERT INTO posts(billboard_id, comments_enabled, created_at, title, updated_at, user_id) VALUES('21', 1, CURRENT_TIMESTAMP(), 'Horarios 3', NULL, '21');
-INSERT INTO posts(billboard_id, comments_enabled, created_at, title, updated_at, user_id) VALUES('21', 1, CURRENT_TIMESTAMP(), 'Resultados Mate 3', NULL, '21');
-INSERT INTO posts(billboard_id, comments_enabled, created_at, title, updated_at, user_id) VALUES('21', 1, CURRENT_TIMESTAMP(), 'Resultados Redes', NULL, '21');
-INSERT INTO posts(billboard_id, comments_enabled, created_at, title, updated_at, user_id) VALUES('21', 1, CURRENT_TIMESTAMP(), 'Resultados TTPS Java', NULL, '21');
+INSERT INTO posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('1', 1, CURRENT_TIMESTAMP(), 'horarios de primero', 'https://helpx.adobe.com/in/stock/how-to/visual-reverse-image-search/_jcr_content/main-pars/image.img.jpg/visual-reverse-image-search-v2_1000x560.jpg', 'Horarios 1', NULL, '21');
+INSERT INTO posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('1', 1, CURRENT_TIMESTAMP(), 'aprobaron casi todos', '', 'Resultados Adp', NULL, '21');
+INSERT INTO posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('1', 1, CURRENT_TIMESTAMP(), 'los felicito', '', 'Resultados Arq', NULL, '21');
+INSERT INTO posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('1', 1, CURRENT_TIMESTAMP(), 'volve en febrero', '', 'Resultados Org', NULL, '21');
+INSERT INTO posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('11', 1, CURRENT_TIMESTAMP(), 'si se puede', '', 'Horarios 2', NULL, '21');
+INSERT INTO posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('11', 1, CURRENT_TIMESTAMP(), 'acid', '', 'Resultados Ibd', NULL, '21');
+INSERT INTO posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('11', 1, CURRENT_TIMESTAMP(), 'muy bien', '', 'Resultados Ing1', NULL, '21');
+INSERT INTO posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('11', 1, CURRENT_TIMESTAMP(), 'falto t de n', '', 'Resultados Ayed', NULL, '21');
+INSERT INTO posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('21', 1, CURRENT_TIMESTAMP(), 'agarrate con concu', '', 'Horarios 3', NULL, '21');
+INSERT INTO posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('21', 1, CURRENT_TIMESTAMP(), 'probabilidades de aprobar', '', 'Resultados Mate 3', NULL, '21');
+INSERT INTO posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('21', 1, CURRENT_TIMESTAMP(), 'recursada nro 1920194', '', 'Resultados Redes', NULL, '21');
+INSERT INTO posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('21', 1, CURRENT_TIMESTAMP(), 'los mas copados', 'https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg', 'Resultados TTPS Java', NULL, '21');
 -- Agregamos comentarios
 INSERT INTO comments(content, post_id, user_id) VALUES('Genial! Al fin publican los horarios.', '11', '11');
 INSERT INTO comments(content, post_id, user_id) VALUES('Aprobeeee.', '21', '11');

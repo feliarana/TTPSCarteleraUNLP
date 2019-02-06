@@ -1,5 +1,6 @@
 package com.cartelera.infocarteapi.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,8 +30,10 @@ public class Billboard {
 
   private String image;
 
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
   private Date created_at;
 
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
   private Date updated_at;
 
   @ManyToOne
