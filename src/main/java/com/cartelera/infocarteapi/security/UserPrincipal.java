@@ -29,6 +29,7 @@ public class UserPrincipal implements UserDetails {
     }
 
     public static UserPrincipal create(User user) {
+      //Con esto sabemos que rol tiene el usuario.
         List<GrantedAuthority> authorities = user.getRoles().stream().map(role ->
                 new SimpleGrantedAuthority(role.getRoleName())
         ).collect(Collectors.toList());

@@ -1,7 +1,7 @@
 -- Agregamos los roles
-INSERT INTO roles(role_name) VALUES('ROLE_ADMIN');
-INSERT INTO roles(role_name) VALUES('ROLE_ALUMNO');
-INSERT INTO roles(role_name) VALUES('ROLE_PROFESOR');
+INSERT INTO roles(role_name) VALUES('ADMIN');
+INSERT INTO roles(role_name) VALUES('ALUMNO');
+INSERT INTO roles(role_name) VALUES('PROFESOR');
 -- Agregamos usuarios
 INSERT INTO users (active, password, username) VALUES (1, '$2a$10$wzqz/gJMaySr4Vb7LOWx8eMQDt57fy5MuGVqaO1r58HNdcmYX/wd6', "admin");
 INSERT INTO users (active, password, username) VALUES (1, '$2a$10$dhqE2Ac0Z.ZKTuzf3I1ugeyESlKYtAIwlt48euY8yTSu8wNxqazXO', "alumno");
