@@ -13,5 +13,5 @@ import java.util.List;
 @CrossOrigin
 @RepositoryRestResource(path = "comments", collectionResourceRel = "comments")
 public interface CommentRepository extends PagingAndSortingRepository<Comment, Long> {
-  List<Comment> findByContent(@Param("content") String content);
+  List<Comment> findByComment(@Param("comment") String comment);
 }
