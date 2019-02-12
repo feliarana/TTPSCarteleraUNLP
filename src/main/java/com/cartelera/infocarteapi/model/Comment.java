@@ -26,7 +26,8 @@ public class Comment {
   @JoinColumn(name = "user_id", nullable = false)
   private User user;
 
-  private String content;
+  @NotNull
+  private String comment;
 
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
   private Date created_at;
