@@ -32,6 +32,8 @@ public class JwtTokenProvider {
         Date now = new Date();
         Date expiryDate = new Date(now.getTime() + jwtExpirationInMs);
 
+        System.out.println("EXPIRACION: " + expiryDate);
+
         System.out.println("SECRET: " + jwtSecret);
         System.out.println("base64: " + base64Encoded);
 

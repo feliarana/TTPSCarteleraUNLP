@@ -98,13 +98,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers(HttpMethod.PATCH, "/comments").hasAuthority("ADMIN")
                     .antMatchers(HttpMethod.PATCH, "/comments/**").hasAuthority("ADMIN")
 
-                    .antMatchers(HttpMethod.PUT, "/billboards").hasAuthority("ADMIN")
-                    .antMatchers(HttpMethod.PUT, "/billboards/**").hasAuthority("ADMIN")
-                    .antMatchers(HttpMethod.PUT, "/posts").hasAnyAuthority("ADMIN", "PROFESOR")
-                    .antMatchers(HttpMethod.PUT, "/posts/**").hasAnyAuthority("ADMIN", "PROFESOR")
-                    .antMatchers(HttpMethod.PUT, "/comments").hasAuthority("ADMIN")
-                    .antMatchers(HttpMethod.PUT, "/comments/**").hasAuthority("ADMIN")
-
                     .antMatchers(HttpMethod.DELETE, "/billboards").hasAuthority("ADMIN")
                     .antMatchers(HttpMethod.DELETE, "/billboards/**").hasAuthority("ADMIN")
                     .antMatchers(HttpMethod.DELETE, "/posts").hasAnyAuthority("ADMIN", "PROFESOR")
