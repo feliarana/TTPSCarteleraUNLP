@@ -25,7 +25,7 @@ public class Post {
   @Column
   private String image;
 
-  @Column
+  @Column(length = 255)
   private String description;
 
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
@@ -55,7 +55,7 @@ public class Post {
   @JoinColumn(name="user_id", nullable=false)
   private User user;
 
-  @OneToMany(mappedBy = "user")
+  @OneToMany(mappedBy = "post")
   private List<Comment> comments = new ArrayList<Comment>();
 
 
