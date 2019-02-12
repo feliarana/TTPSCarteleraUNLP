@@ -90,6 +90,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers(HttpMethod.POST, "/posts/**").hasAnyAuthority("ADMIN", "PROFESOR")
                     .antMatchers(HttpMethod.POST, "/comments").authenticated()
                     .antMatchers(HttpMethod.POST, "/comments/**").authenticated()
+
+                    .antMatchers(HttpMethod.PATCH, "/billboards").hasAuthority("ADMIN")
+                    .antMatchers(HttpMethod.PATCH, "/billboards/**").hasAuthority("ADMIN")
+                    .antMatchers(HttpMethod.PATCH, "/posts").hasAnyAuthority("ADMIN", "PROFESOR")
+                    .antMatchers(HttpMethod.PATCH, "/posts/**").hasAnyAuthority("ADMIN", "PROFESOR")
+                    .antMatchers(HttpMethod.PATCH, "/comments").hasAuthority("ADMIN")
+                    .antMatchers(HttpMethod.PATCH, "/comments/**").hasAuthority("ADMIN")
+
+                    .antMatchers(HttpMethod.PUT, "/billboards").hasAuthority("ADMIN")
+                    .antMatchers(HttpMethod.PUT, "/billboards/**").hasAuthority("ADMIN")
+                    .antMatchers(HttpMethod.PUT, "/posts").hasAnyAuthority("ADMIN", "PROFESOR")
+                    .antMatchers(HttpMethod.PUT, "/posts/**").hasAnyAuthority("ADMIN", "PROFESOR")
+                    .antMatchers(HttpMethod.PUT, "/comments").hasAuthority("ADMIN")
+                    .antMatchers(HttpMethod.PUT, "/comments/**").hasAuthority("ADMIN")
+
+                    .antMatchers(HttpMethod.DELETE, "/billboards").hasAuthority("ADMIN")
+                    .antMatchers(HttpMethod.DELETE, "/billboards/**").hasAuthority("ADMIN")
+                    .antMatchers(HttpMethod.DELETE, "/posts").hasAnyAuthority("ADMIN", "PROFESOR")
+                    .antMatchers(HttpMethod.DELETE, "/posts/**").hasAnyAuthority("ADMIN", "PROFESOR")
+                    .antMatchers(HttpMethod.DELETE, "/comments").hasAuthority("ADMIN")
+                    .antMatchers(HttpMethod.DELETE, "/comments/**").hasAuthority("ADMIN")
+
                     .antMatchers("/api/auth/**")
                         .permitAll()
                     .antMatchers("/users/checkUsernameAvailability")
