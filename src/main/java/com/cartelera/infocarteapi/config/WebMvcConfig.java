@@ -13,10 +13,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
   public void addCorsMappings(CorsRegistry registry) {
     registry.addMapping("/**")
       .allowedOrigins("*")
-      .allowedOrigins("https://infocarte.herokuapp.com")
-      .allowedOrigins("http://localhost:4200")
       .allowedMethods("HEAD", "OPTIONS", "GET", "POST", "PATCH", "DELETE")
-      .allowedHeaders("Access-Control-Allow-Origin")
+      .allowedHeaders("Access-Control-Allow-Origin", "*")
       .maxAge(MAX_AGE_SECS);
   }
+
+
 }

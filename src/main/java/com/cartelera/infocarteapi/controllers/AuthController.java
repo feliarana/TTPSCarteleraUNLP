@@ -20,9 +20,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
@@ -63,6 +65,13 @@ public class AuthController {
     return ResponseEntity.ok(new JwtAuthenticationResponse(jwt));
   }
 
+  @RequestMapping(value= "/**", method= RequestMethod.OPTIONS)
+  public void corsHeaders(HttpServletResponse response) {
+    response.addHeader("Access-Control-Allow-Origin", "*");
+    response.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    response.addHeader("Access-Control-Allow-Headers", "origin, content-type, accept, x-requested-with");
+    response.addHeader("Access-Control-Max-Age", "3600");
+  }
 //  @PostMapping("/signup")
 //  public ResponseEntity<?> registerUser(@Valid SignUpRequest signUpRequest) {
 //    if (userRepository.existsByUsername(signUpRequest.getUsername())) {
