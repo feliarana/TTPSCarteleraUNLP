@@ -30,6 +30,12 @@ public class User {
   private String password;
 
   @Column
+  private String name;
+
+  @Column
+  private String lastname;
+
+  @Column
   private boolean active;
 
   private Date created_at;
@@ -82,10 +88,12 @@ public class User {
   @OneToMany(mappedBy="user")
   private Set<Comment> comments;
 
-  public <T> User(String username, String password, Set<Role> roles, boolean active) {
+  public <T> User(String username, String password, Set<Role> roles, boolean active, String name, String lastname) {
     this.username = username;
     this.password = password;
     this.roles = roles;
     this.active = active;
+    this.name = name;
+    this.lastname = lastname;
   }
 }

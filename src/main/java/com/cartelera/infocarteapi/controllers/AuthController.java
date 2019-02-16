@@ -63,29 +63,29 @@ public class AuthController {
     return ResponseEntity.ok(new JwtAuthenticationResponse(jwt));
   }
 
-  @PostMapping("/signup")
-  public ResponseEntity<?> registerUser(@Valid SignUpRequest signUpRequest) {
-    if (userRepository.existsByUsername(signUpRequest.getUsername())) {
-      return new ResponseEntity(new ApiResponse(false, "Username is already taken!"),
-        HttpStatus.BAD_REQUEST);
-    }
-
-    // Creating user's account
-//      User user = new User(signUpRequest.getUsername(),signUpRequest.getPassword(), true);
-    Role userRole = roleRepository.findByRoleName("ROLE_USER")
-      .orElseThrow(() -> new AppException("User Role not set."));
-
-    User user = new User(signUpRequest.getUsername(), passwordEncoder.encode(signUpRequest.getPassword()), Collections.singleton(userRole), true);
-
-
-    user.setRoles(Collections.singleton(userRole));
-
-    User result = userRepository.save(user);
-
-    URI location = ServletUriComponentsBuilder
-      .fromCurrentContextPath().path("/users/{username}")
-      .buildAndExpand(result.getUsername()).toUri();
-
-    return ResponseEntity.created(location).body(new ApiResponse(true, "User registered successfully"));
-  }
+//  @PostMapping("/signup")
+//  public ResponseEntity<?> registerUser(@Valid SignUpRequest signUpRequest) {
+//    if (userRepository.existsByUsername(signUpRequest.getUsername())) {
+//      return new ResponseEntity(new ApiResponse(false, "Username is already taken!"),
+//        HttpStatus.BAD_REQUEST);
+//    }
+//
+//    // Creating user's account
+////      User user = new User(signUpRequest.getUsername(),signUpRequest.getPassword(), true);
+//    Role userRole = roleRepository.findByRoleName("ROLE_USER")
+//      .orElseThrow(() -> new AppException("User Role not set."));
+//
+//    User user = new User(signUpRequest.getUsername(), passwordEncoder.encode(signUpRequest.getPassword()), Collections.singleton(userRole), true);
+//
+//
+//    user.setRoles(Collections.singleton(userRole));
+//
+//    User result = userRepository.save(user);
+//
+//    URI location = ServletUriComponentsBuilder
+//      .fromCurrentContextPath().path("/users/{username}")
+//      .buildAndExpand(result.getUsername()).toUri();
+//
+//    return ResponseEntity.created(location).body(new ApiResponse(true, "User registered successfully"));
+//  }
 }

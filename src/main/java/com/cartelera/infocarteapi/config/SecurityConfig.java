@@ -82,8 +82,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/**/*.css",
                         "/**/*.js")
                         .permitAll()
-                    .antMatchers(HttpMethod.GET,"/billboards", "/billboards/**", "/posts", "/posts/**", "/comments/", "/comments/**")
+                    .antMatchers(HttpMethod.GET,"/billboards", "/billboards/**", "/posts", "/posts/**",
+                      "/comments/", "/comments/**", "/users/*/comments", "/comments/*/user")
                         .permitAll()
+
                     .antMatchers(HttpMethod.POST, "/billboards").hasAuthority("ADMIN")
                     .antMatchers(HttpMethod.POST, "/billboards/**").hasAuthority("ADMIN")
                     .antMatchers(HttpMethod.POST, "/posts").hasAnyAuthority("ADMIN", "PROFESOR")

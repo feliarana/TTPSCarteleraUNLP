@@ -3,9 +3,9 @@ INSERT INTO roles(role_name) VALUES('ADMIN');
 INSERT INTO roles(role_name) VALUES('ALUMNO');
 INSERT INTO roles(role_name) VALUES('PROFESOR');
 -- Agregamos usuarios
-INSERT INTO users (active, password, username) VALUES (1, '$2a$10$wzqz/gJMaySr4Vb7LOWx8eMQDt57fy5MuGVqaO1r58HNdcmYX/wd6', "admin");
-INSERT INTO users (active, password, username) VALUES (1, '$2a$10$dhqE2Ac0Z.ZKTuzf3I1ugeyESlKYtAIwlt48euY8yTSu8wNxqazXO', "alumno");
-INSERT INTO users (active, password, username) VALUES (1, '$2a$10$wzqz/gJMaySr4Vb7LOWx8eMQDt57fy5MuGVqaO1r58HNdcmYX/wd6', "profesor");
+INSERT INTO users (active, password, username, name, lastname) VALUES (1, '$2a$10$wzqz/gJMaySr4Vb7LOWx8eMQDt57fy5MuGVqaO1r58HNdcmYX/wd6', "admin", "admin", "admin");
+INSERT INTO users (active, password, username, name, lastname) VALUES (1, '$2a$10$dhqE2Ac0Z.ZKTuzf3I1ugeyESlKYtAIwlt48euY8yTSu8wNxqazXO', "alumno", "Pepe", "Cardenas");
+INSERT INTO users (active, password, username, name, lastname) VALUES (1, '$2a$10$wzqz/gJMaySr4Vb7LOWx8eMQDt57fy5MuGVqaO1r58HNdcmYX/wd6', "profesor", "Hernecio", "Villarica");
 -- Establecemos roles
 INSERT INTO users_roles(user_id, role_id) VALUES ('1', '1');
 INSERT INTO users_roles(user_id, role_id) VALUES ('11', '11');
