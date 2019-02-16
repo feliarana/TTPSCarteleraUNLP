@@ -1,6 +1,8 @@
 package com.cartelera.infocarteapi.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,6 +20,9 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "billboards")
+@JsonIdentityInfo(
+  generator = ObjectIdGenerators.PropertyGenerator.class,
+  property = "id")
 public class Billboard {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

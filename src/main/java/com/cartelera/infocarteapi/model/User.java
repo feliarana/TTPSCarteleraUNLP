@@ -1,5 +1,7 @@
 package com.cartelera.infocarteapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 
 import java.util.ArrayList;
@@ -18,6 +20,9 @@ import javax.persistence.*;
     "username"
   }),
 })
+@JsonIdentityInfo(
+  generator = ObjectIdGenerators.PropertyGenerator.class,
+  property = "id")
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
