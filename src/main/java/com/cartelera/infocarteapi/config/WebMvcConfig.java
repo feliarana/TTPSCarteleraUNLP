@@ -14,6 +14,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     registry.addMapping("/**")
       .allowedOrigins("*")
       .allowedOrigins("https://infocarte.herokuapp.com")
+      .allowedOrigins("http://localhost:4200")
       .allowedMethods("HEAD", "OPTIONS", "GET", "POST", "PATCH", "DELETE")
       .allowedHeaders("Access-Control-Allow-Origin")
       .maxAge(MAX_AGE_SECS);
