@@ -7,17 +7,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
-  private final long MAX_AGE_SECS = 3600;
-
   @Override
   public void addCorsMappings(CorsRegistry registry) {
-    registry.addMapping("/**")
+    registry.addMapping("/**").allowedMethods("GET", "POST", "DELETE", "HEAD", "OPTIONS")
       .allowedOrigins("*")
-      .allowedMethods("HEAD", "OPTIONS", "GET", "POST", "PATCH", "DELETE")
-      .allowedHeaders("Content-Type", "X-Requested-With", "accept", "Origin", "Access-Control-Request-Method",
-        "Access-Control-Request-Headers")
-      .exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials")
-      .maxAge(MAX_AGE_SECS);
+      .allowedHeaders("Authorization", "Cache-Control", "Content-Type", "Accept", "X-Requested-With", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Origin")
+      .exposedHeaders("Access-Control-Expose-Headers", "Authorization", "Cache-Control", "Content-Type", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Origin");
   }
 
 
