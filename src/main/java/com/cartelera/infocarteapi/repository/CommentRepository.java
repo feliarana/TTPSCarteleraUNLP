@@ -17,7 +17,8 @@ import java.util.List;
 public interface CommentRepository extends PagingAndSortingRepository<Comment, Long> {
   List<Comment> findByComment(@Param("comment") String comment);
 
-  @Query("SELECT new com.cartelera.infocarteapi.model.Comment(c.id, c.post, c.user, c.comment) " +
+//  @Query("SELECT new com.cartelera.infocarteapi.model.Comment(c.id, c.post, c.user, c.comment) " +
+    @Query("SELECT c.id, c.comment " +
     "FROM Comment c INNER JOIN User u on c.user = u.id where u.id = :id")
-  List<Comment> findByUserId(@Param("id")Long id);
+  List<Comment> findAllByUserId(@Param("id")Long id);
 }
