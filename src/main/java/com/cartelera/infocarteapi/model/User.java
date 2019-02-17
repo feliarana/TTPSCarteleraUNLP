@@ -20,9 +20,6 @@ import javax.persistence.*;
     "username"
   }),
 })
-@JsonIdentityInfo(
-  generator = ObjectIdGenerators.PropertyGenerator.class,
-  property = "id")
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

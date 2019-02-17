@@ -17,9 +17,6 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "posts")
-@JsonIdentityInfo(
-  generator = ObjectIdGenerators.PropertyGenerator.class,
-  property = "id")
 public class Post {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
