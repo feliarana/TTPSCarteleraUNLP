@@ -69,8 +69,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .cors()
                     .and()
-//                .csrf()
-//                    .disable()
+          // creo que es el csrf.disable() creo que esta jodiendo
+                .csrf()
+                    .disable()
                 .exceptionHandling()
                     .authenticationEntryPoint(unauthorizedHandler)
                     .and()
