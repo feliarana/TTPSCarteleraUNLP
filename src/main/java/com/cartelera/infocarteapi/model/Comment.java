@@ -7,11 +7,10 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-@Data
-@NoArgsConstructor
-@Builder
-@AllArgsConstructor
+@Getter
+@Setter
 @Entity
+@NoArgsConstructor
 @Table(name = "comments")
 public class Comment {
   @Id
@@ -28,6 +27,13 @@ public class Comment {
 
   @NotNull
   private String comment;
+
+  public Comment(Long id, Post post, User user, String comment){
+    this.setId(id);
+    this.setPost(post);
+    this.setUser(user);
+    this.setComment(comment);
+  }
 
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
   private Date created_at;

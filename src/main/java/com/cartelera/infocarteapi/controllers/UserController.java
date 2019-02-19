@@ -1,22 +1,19 @@
 package com.cartelera.infocarteapi.controllers;
 
 import com.cartelera.infocarteapi.model.Comment;
-import com.cartelera.infocarteapi.model.User;
 import com.cartelera.infocarteapi.payload.UserIdentityAvailability;
 import com.cartelera.infocarteapi.payload.UserSummary;
 import com.cartelera.infocarteapi.repository.CommentRepository;
 import com.cartelera.infocarteapi.repository.UserRepository;
 import com.cartelera.infocarteapi.security.CurrentUser;
 import com.cartelera.infocarteapi.security.UserPrincipal;
+import com.cartelera.infocarteapi.util.DataResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import java.util.List;
 
 @RestController
 //@CrossOrigin(origins = "*", maxAge = 3600)
@@ -46,10 +43,20 @@ public class UserController {
 
 
   @GetMapping("/users/{id}/comments")
-//  @CrossOrigin(origins = "*")
-  public Collection<Comment> comments(@PathVariable Long id) {
-    Collection<Comment> comments = commentRepository.findByUserId(id);
-    return comments;
+
+  @CrossOrigin(origins = "*")
+  public DataResponse comments(@PathVariable Long id) {
+    List<Comment> comments = commentRepository.findAllByUserId(id);
+//    HashMap<String, Long> map = new HashMap<>();
+//
+//    for (int i = 0; i < comments.size(); i++) {
+//      map.put("comment_id", ((Comment) comments.get(i)).getId());
+//    }
+    DataResponse response = new DataResponse ();
+    response.setSuccess(true);
+    response.setCount(comments.size());
+    response.setData(comments);
+    return response;
   }
 
 

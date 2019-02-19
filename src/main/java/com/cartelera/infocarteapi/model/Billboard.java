@@ -20,9 +20,6 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "billboards")
-@JsonIdentityInfo(
-  generator = ObjectIdGenerators.PropertyGenerator.class,
-  property = "id")
 public class Billboard {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
