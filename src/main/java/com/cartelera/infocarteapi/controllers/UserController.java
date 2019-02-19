@@ -19,7 +19,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600)
+//@CrossOrigin(origins = "*", maxAge = 3600)
 //@RequestMapping("/api")
 public class UserController {
 
@@ -46,7 +46,7 @@ public class UserController {
 
 
   @GetMapping("/users/{id}/comments")
-  @CrossOrigin(origins = "*")
+//  @CrossOrigin(origins = "*")
   public Collection<Comment> comments(@PathVariable Long id) {
     Collection<Comment> comments = commentRepository.findByUserId(id);
     return comments;
