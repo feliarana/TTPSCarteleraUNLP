@@ -38,6 +38,12 @@ public class User {
   private String lastname;
 
   @Column
+  private String email;
+
+  @Column
+  private String photo;
+
+  @Column
   private boolean active;
 
   private Date created_at;
