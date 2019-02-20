@@ -1,8 +1,11 @@
 package com.cartelera.infocarteapi.controllers;
 
+import com.cartelera.infocarteapi.model.Billboard;
 import com.cartelera.infocarteapi.model.Comment;
+import com.cartelera.infocarteapi.model.User;
 import com.cartelera.infocarteapi.payload.UserIdentityAvailability;
 import com.cartelera.infocarteapi.payload.UserSummary;
+import com.cartelera.infocarteapi.repository.BillboardRepository;
 import com.cartelera.infocarteapi.repository.CommentRepository;
 import com.cartelera.infocarteapi.repository.UserRepository;
 import com.cartelera.infocarteapi.security.CurrentUser;
@@ -14,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 @RestController
 //@CrossOrigin(origins = "*", maxAge = 3600)
@@ -22,6 +27,9 @@ public class UserController {
 
   @Autowired
   private UserRepository userRepository;
+
+  @Autowired
+  private BillboardRepository billboardRepository;
 
   @Autowired
   private CommentRepository commentRepository;
@@ -43,15 +51,9 @@ public class UserController {
 
 
   @GetMapping("/users/{id}/comments")
-
   @CrossOrigin(origins = "*")
   public DataResponse comments(@PathVariable Long id) {
     List<Comment> comments = commentRepository.findAllByUserId(id);
-//    HashMap<String, Long> map = new HashMap<>();
-//
-//    for (int i = 0; i < comments.size(); i++) {
-//      map.put("comment_id", ((Comment) comments.get(i)).getId());
-//    }
     DataResponse response = new DataResponse ();
     response.setSuccess(true);
     response.setCount(comments.size());
@@ -59,5 +61,52 @@ public class UserController {
     return response;
   }
 
+  @PostMapping("/users/{id}/followBillboard")
+  @CrossOrigin(origins = "*")
+  public DataResponse followBillboard(@RequestBody Map<String, Object> payload, @PathVariable Long id ) {
 
+    Optional<User> user = userRepository.findById(id);
+    List<Billboard> followedBillboards =  user.get().getFollowedBillboards();
+
+    Optional<Billboard> billboard = billboardRepository.findById(Long.valueOf((String) payload.get("billboard_id")));
+
+    Boolean success;
+    if (!followedBillboards.contains(billboard.get())){
+      followedBillboards.add(billboard.get());
+      user.get().setFollowedBillboards(followedBillboards);
+      userRepository.save(user.get());
+      success = true;
+    }
+    else{
+      success = false;
+    }
+    DataResponse response = new DataResponse ();
+    response.setSuccess(success);
+    return response;
+  }
+
+
+  @DeleteMapping("/users/{id}/followBillboard")
+  @CrossOrigin(origins = "*")
+  public DataResponse unfollowBillboard(@RequestBody Map<String, Object> payload, @PathVariable Long id ) {
+
+    Optional<User> user = userRepository.findById(id);
+    List<Billboard> followedBillboards =  user.get().getFollowedBillboards();
+
+    Optional<Billboard> billboard = billboardRepository.findById(Long.valueOf((String) payload.get("billboard_id")));
+
+    Boolean success;
+    if (followedBillboards.contains(billboard.get())){
+      followedBillboards.remove(billboard.get());
+      user.get().setFollowedBillboards(followedBillboards);
+      userRepository.save(user.get());
+      success = true;
+    }
+    else{
+      success = false;
+    }
+    DataResponse response = new DataResponse ();
+    response.setSuccess(success);
+    return response;
+  }
 }

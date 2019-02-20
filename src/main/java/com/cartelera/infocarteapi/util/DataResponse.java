@@ -16,6 +16,6 @@ public class DataResponse {
 
   private Boolean success;
   private Integer count;
-  private List<Comment> data;
+  private List data;
 
 }
