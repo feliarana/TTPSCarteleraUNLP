@@ -51,7 +51,7 @@ public class Billboard {
     joinColumns = {@JoinColumn(name = "billboard_id")},
     inverseJoinColumns = {@JoinColumn(name = "user_id")}
   )
-  private List<Billboard> usersFollowers = new ArrayList<Billboard>();
+  private List<User> usersFollowers = new ArrayList<User>();
 
   @PrePersist
   protected void onCreate() {
