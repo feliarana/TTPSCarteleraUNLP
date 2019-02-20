@@ -45,6 +45,14 @@ public class Billboard {
   @OneToMany(mappedBy = "billboard")
   private List<Post> posts = new ArrayList<Post>();
 
+  @ManyToMany(cascade = {CascadeType.ALL})
+  @JoinTable(
+    name = "followed_billboards",
+    joinColumns = {@JoinColumn(name = "billboard_id")},
+    inverseJoinColumns = {@JoinColumn(name = "user_id")}
+  )
+  private List<Billboard> usersFollowers = new ArrayList<Billboard>();
+
   @PrePersist
   protected void onCreate() {
     created_at = new Date();
