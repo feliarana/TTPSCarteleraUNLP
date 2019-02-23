@@ -30,10 +30,10 @@ INSERT INTO posts(billboard_id, comments_enabled, created_at, description, image
 INSERT INTO posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('21', 1, CURRENT_TIMESTAMP(), 'recursada nro 1920194', '', 'Resultados Redes', NULL, '21');
 INSERT INTO posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('21', 1, CURRENT_TIMESTAMP(), 'los mas copados', 'https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg', 'Resultados TTPS Java', NULL, '21');
 -- Agregamos comentarios
-INSERT INTO comments(comment, post_id, user_id) VALUES('Genial! Al fin publican los horarios.', '11', '11');
-INSERT INTO comments(comment, post_id, user_id) VALUES('Aprobeeee.', '21', '11');
-INSERT INTO comments(comment, post_id, user_id) VALUES('Uh tengo que recursar', '21', '11');
-INSERT INTO comments(comment, post_id, user_id) VALUES('APROBAMOS TTPS!!', '1', '11');
+INSERT INTO comments(comment, post_id, user_id, created_at) VALUES('Genial! Al fin publican los horarios.', '11', '11', CURRENT_TIMESTAMP());
+INSERT INTO comments(comment, post_id, user_id, created_at) VALUES('Aprobeeee.', '21', '11', CURRENT_TIMESTAMP());
+INSERT INTO comments(comment, post_id, user_id, created_at) VALUES('Uh tengo que recursar', '21', '11', CURRENT_TIMESTAMP());
+INSERT INTO comments(comment, post_id, user_id, created_at) VALUES('APROBAMOS TTPS!!', '1', '11', CURRENT_TIMESTAMP());
 -- Agregamos seguidores a carteleras
 INSERT INTO followed_billboards(user_id, billboard_id) VALUES('11', '1');
 INSERT INTO followed_billboards(user_id, billboard_id) VALUES('11', '11');

@@ -86,7 +86,7 @@ public class UserController {
   }
 
 
-  @DeleteMapping("/users/{user_id}/unfollowBillboard/{billboard_id}")
+  @GetMapping("/users/{user_id}/unfollowBillboard/{billboard_id}")
   @CrossOrigin(origins = "*")
   public DataResponse unfollowBillboard(@PathVariable Long user_id, @PathVariable Long billboard_id ) {
 
