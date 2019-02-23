@@ -1,9 +1,13 @@
 package com.cartelera.infocarteapi.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.GenerationTime;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -29,6 +33,7 @@ public class User {
   private String username;
 
   @Column
+  @JsonIgnore
   private String password;
 
   @Column
@@ -46,18 +51,20 @@ public class User {
   @Column
   private boolean active;
 
-  private Date created_at;
+  @CreationTimestamp
+  private Timestamp created_at;
 
-  private Date updated_at;
+  @CreationTimestamp
+  private Timestamp updated_at;
 
   @PrePersist
   protected void onCreate() {
-    created_at = new Date();
+    created_at = new Timestamp(System.currentTimeMillis());
   }
 
   @PreUpdate
   protected void onUpdate() {
-    updated_at = new Date();
+    updated_at = new Timestamp(System.currentTimeMillis());
   }
 
   @ManyToMany(cascade = {

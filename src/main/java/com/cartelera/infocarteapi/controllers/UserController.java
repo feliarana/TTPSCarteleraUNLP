@@ -86,14 +86,14 @@ public class UserController {
   }
 
 
-  @DeleteMapping("/users/{id}/followBillboard")
+  @DeleteMapping("/users/{user_id}/unfollowBillboard/{billboard_id}")
   @CrossOrigin(origins = "*")
-  public DataResponse unfollowBillboard(@RequestBody Map<String, Object> payload, @PathVariable Long id ) {
+  public DataResponse unfollowBillboard(@PathVariable Long user_id, @PathVariable Long billboard_id ) {
 
-    Optional<User> user = userRepository.findById(id);
+    Optional<User> user = userRepository.findById(user_id);
     List<Billboard> followedBillboards =  user.get().getFollowedBillboards();
 
-    Optional<Billboard> billboard = billboardRepository.findById(Long.valueOf((String) payload.get("billboard_id")));
+    Optional<Billboard> billboard = billboardRepository.findById(billboard_id);
 
     Boolean success;
     if (followedBillboards.contains(billboard.get())){
