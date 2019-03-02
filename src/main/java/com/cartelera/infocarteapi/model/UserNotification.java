@@ -3,6 +3,7 @@ package com.cartelera.infocarteapi.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 
@@ -25,6 +26,7 @@ public class UserNotification {
   @JoinColumn(name = "notification_id", nullable = false)
   private Notification notification;
 
+  @Column(nullable = false,columnDefinition = "boolean default false")
   private Boolean read;
 
 }
