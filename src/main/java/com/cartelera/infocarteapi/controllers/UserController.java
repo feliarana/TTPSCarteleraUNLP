@@ -112,7 +112,7 @@ public class UserController {
     return response;
   }
 
-  @PatchMapping("/users/{user_id}/notifications/{userNotification_id}")
+  @GetMapping("/users/{user_id}/userNotifications/{userNotificationId}")
   @CrossOrigin(origins = "*")
   public DataResponse comments(@PathVariable Long user_id, @PathVariable Long userNotificationId) {
     Optional<User> user = userRepository.findById(user_id);

@@ -28,4 +28,10 @@ public class UserNotification {
 
   private Boolean read;
 
+  @PrePersist
+  void preInsert() {
+    if (this.read == null)
+      this.read = false;
+  }
+
 }
