@@ -13,6 +13,9 @@ import java.util.Set;
 @NoArgsConstructor
 @Table(name = "notifications")
 public class Notification {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
   public String text;
 
