@@ -26,7 +26,6 @@ public class UserNotification {
   @JoinColumn(name = "notification_id", nullable = false)
   private Notification notification;
 
-  @Column(nullable = false,columnDefinition = "boolean default false")
   private Boolean read;
 
 }
