@@ -1,16 +1,16 @@
 package com.cartelera.infocarteapi.controllers;
 
-import com.cartelera.infocarteapi.model.Billboard;
-import com.cartelera.infocarteapi.model.Comment;
-import com.cartelera.infocarteapi.model.User;
+import com.cartelera.infocarteapi.model.*;
 import com.cartelera.infocarteapi.payload.UserIdentityAvailability;
 import com.cartelera.infocarteapi.payload.UserSummary;
 import com.cartelera.infocarteapi.repository.BillboardRepository;
 import com.cartelera.infocarteapi.repository.CommentRepository;
+import com.cartelera.infocarteapi.repository.UserNotificationRepository;
 import com.cartelera.infocarteapi.repository.UserRepository;
 import com.cartelera.infocarteapi.security.CurrentUser;
 import com.cartelera.infocarteapi.security.UserPrincipal;
 import com.cartelera.infocarteapi.util.DataResponse;
+import org.aspectj.weaver.ast.Not;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +34,9 @@ public class UserController {
   @Autowired
   private CommentRepository commentRepository;
 
+  @Autowired
+  private UserNotificationRepository userNotificationRepository;
+
   private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
   @GetMapping("/users/me")
@@ -48,7 +51,6 @@ public class UserController {
     Boolean isAvailable = !userRepository.existsByUsername(username);
     return new UserIdentityAvailability(isAvailable);
   }
-
 
   @GetMapping("/users/{id}/comments")
   @CrossOrigin(origins = "*")
@@ -109,4 +111,18 @@ public class UserController {
     response.setSuccess(success);
     return response;
   }
+
+  @PatchMapping("/users/{user_id}/notifications/{userNotification_id}")
+  @CrossOrigin(origins = "*")
+  public DataResponse comments(@PathVariable Long user_id, @PathVariable Long userNotificationId) {
+    Optional<User> user = userRepository.findById(user_id);
+    Optional<UserNotification> optionalUserNotification = userNotificationRepository.findById(userNotificationId);
+    UserNotification userNotification = optionalUserNotification.get();
+    userNotification.setRead(true);
+    userNotificationRepository.save(userNotification);
+    DataResponse response = new DataResponse ();
+    response.setSuccess(true);
+    return response;
+  }
+
 }
