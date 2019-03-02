@@ -16,8 +16,7 @@ public class Notification {
 
   public String text;
 
-
-  @OneToMany(mappedBy="user")
+  @OneToMany(mappedBy="notification")
   private Set<UserNotification> notifications;
 
 
