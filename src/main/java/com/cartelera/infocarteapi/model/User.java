@@ -98,7 +98,7 @@ public class User {
   private List<Billboard> likedBillboards = new ArrayList<Billboard>();
 
   @OneToMany(mappedBy="user")
-  private Set<UserNotification> notifications;
+  private Set<UserNotification> userNotifications;
 
   @OneToMany(mappedBy="user")
   private Set<Post> posts;
