@@ -34,7 +34,7 @@ INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('Aprob
 INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('Uh tengo que recursar', '2', '3', current_timestamp);
 INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('APROBAMOS TTPS!!', '1', '3', current_timestamp);
 -- Agregamos seguidores a carteleras
-INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('2', '1');
-INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('2', '2');
-INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('2', '3');
-INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('2', '4');
+INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('1', '1');
+INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('1', '2');
+INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('1', '3');
+INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('1', '4');
