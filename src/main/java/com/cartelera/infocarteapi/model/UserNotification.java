@@ -1,5 +1,8 @@
 package com.cartelera.infocarteapi.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,6 +15,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @Table(name = "users_notifications")
+@JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class UserNotification {
 
   @Id

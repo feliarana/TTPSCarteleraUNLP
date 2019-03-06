@@ -21,6 +21,7 @@ import java.util.Set;
 @Setter
 @ToString
 @Table(name="roles")
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id") //esto es para que no entre en loop infinito en algunos json responses
 public class Role {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

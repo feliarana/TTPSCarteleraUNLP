@@ -17,6 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "posts")
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id") //esto es para que no entre en loop infinito en algunos json responses
 public class Post {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

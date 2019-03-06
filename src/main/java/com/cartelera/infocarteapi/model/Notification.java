@@ -1,5 +1,6 @@
 package com.cartelera.infocarteapi.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,5 +23,8 @@ public class Notification {
   @OneToMany(mappedBy="notification")
   private Set<UserNotification> notifications;
 
+  @ManyToOne
+  @JoinColumn(name = "post_id", nullable = false)
+  private Post post;
 
 }

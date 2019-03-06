@@ -16,9 +16,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 //@CrossOrigin(origins = "*", maxAge = 3600)
@@ -124,5 +122,26 @@ public class UserController {
     response.setSuccess(true);
     return response;
   }
+
+  @GetMapping("/users/{id}/userNotifications")
+  @CrossOrigin(origins = "*")
+  public DataResponse userNotifications(@PathVariable Long id) {
+
+    List<Object> userNotifications = Collections.singletonList(userNotificationRepository.findAllByUserId(id));
+
+//    HashMap<String, Long> resultMap = new HashMap<String, Long>();
+//      for (int i = 0; i < userNotifications.size(); i ++) {
+//        resultMap.put("id", userNotifications.get(i).g);
+//        resultMap.put("notification_id", userNotifications.get(i).getId());
+//        resultMap.put("post_id", userNotifications.get(i).getId());
+//    }
+
+    DataResponse response = new DataResponse ();
+    response.setSuccess(true);
+    response.setData(userNotifications);
+    response.setCount(userNotifications.size());
+    return response;
+  }
+
 
 }
