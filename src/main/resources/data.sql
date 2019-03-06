@@ -24,10 +24,10 @@ INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description
 INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('2', true, current_timestamp, 'acid', '', 'Resultados Ibd', NULL, '3');
 INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('2', true, current_timestamp, 'muy bien', '', 'Resultados Ing1', NULL, '3');
 INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('2', true, current_timestamp, 'falto t de n', '', 'Resultados Ayed', NULL, '3');
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('3', true, current_timestamp, 'agarrate con concu', '', 'Horarios 3', NULL, '3');
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('3', true, current_timestamp, 'probabilidades de aprobar', '', 'Resultados Mate 3', NULL, '3');
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('3', true, current_timestamp, 'recursada nro 1920194', '', 'Resultados Redes', NULL, '3');
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('3', true, current_timestamp, 'los mas copados', 'https://i0.wp.com/thehappening.com/wp-content/uploads/2016/12/perro-1.jpg?resize=620%2C420&ssl=1', 'Resultados TTPS Java', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('2', true, current_timestamp, 'agarrate con concu', '', 'Horarios 3', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('2', true, current_timestamp, 'probabilidades de aprobar', '', 'Resultados Mate 3', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('2', true, current_timestamp, 'recursada nro 1920194', '', 'Resultados Redes', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('2', true, current_timestamp, 'los mas copados', 'https://i0.wp.com/thehappening.com/wp-content/uploads/2016/12/perro-1.jpg?resize=620%2C420&ssl=1', 'Resultados TTPS Java', NULL, '3');
 -- Agregamos comentarios
 INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('Genial! Al fin publican los horarios.', '1', '3', current_timestamp);
 INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('Aprobeeee.', '2', '3', current_timestamp);
