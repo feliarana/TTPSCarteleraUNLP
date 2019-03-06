@@ -11,7 +11,7 @@ INSERT INTO public.users_roles(user_id, role_id) VALUES ('1', '1');
 INSERT INTO public.users_roles(user_id, role_id) VALUES ('2', '2');
 INSERT INTO public.users_roles(user_id, role_id) VALUES ('3', '3');
 -- Agregamos carteleras
-INSERT INTO public.billboards(created_at, title, description, image, user_id) VALUES(current_timestamp, 'Cartelera 2do', 'Los newbies', 'https://cdn-images-1.medium.com/max/2000/1*gycg7f5bYLuR4ut_JAEs7A.png', '1');
+INSERT INTO public.billboards(created_at, title, description, image, user_id) VALUES(current_timestamp, 'Cartelera 1ero', 'Los newbies', 'https://cdn-images-1.medium.com/max/2000/1*gycg7f5bYLuR4ut_JAEs7A.png', '1');
 INSERT INTO public.billboards(created_at, title, description, image, user_id) VALUES(current_timestamp, 'Cartelera 2do', 'Los walleros', 'https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_960_720.jpg', '1');
 INSERT INTO public.billboards(created_at, title, description, image, user_id) VALUES(current_timestamp, 'Cartelera 3ero', 'Los resistentes', 'https://www.w3schools.com/w3css/img_lights.jpg', '1');
 INSERT INTO public.billboards(created_at, title, description, image, user_id) VALUES(current_timestamp, 'Cartelera 4to', 'Los tranka', 'https://sample-videos.com/img/Sample-jpg-image-500kb.jpg', '1');
