@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -61,7 +63,11 @@ public class Post {
   private User user;
 
   @OneToMany(mappedBy = "post")
+  @OnDelete(action = OnDeleteAction.CASCADE)
   private List<Comment> comments = new ArrayList<Comment>();
 
+  @OneToMany(mappedBy = "post")
+  @OnDelete(action = OnDeleteAction.CASCADE)
+  private List<Notification> notifications = new ArrayList<>();
 
 }

@@ -1,9 +1,10 @@
 package com.cartelera.infocarteapi.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -21,6 +22,7 @@ public class Notification {
   public String text;
 
   @OneToMany(mappedBy="notification")
+  @OnDelete(action = OnDeleteAction.CASCADE)
   private Set<UserNotification> notifications;
 
   @ManyToOne
