@@ -107,6 +107,9 @@ public class User {
   @OneToMany(mappedBy="user")
   private Set<Comment> comments;
 
+  @OneToMany(mappedBy="user")
+  private Set<Permission> permissions;
+
   public <T> User(String username, String password, Set<Role> roles, boolean active, String name, String lastname) {
     this.username = username;
     this.password = password;

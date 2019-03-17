@@ -46,6 +46,9 @@ public class Billboard {
   @OneToMany(mappedBy = "billboard")
   private List<Post> posts = new ArrayList<Post>();
 
+  @OneToMany(mappedBy = "billboard")
+  private List<Permission> permissions = new ArrayList<Permission>();
+
   @ManyToMany(cascade = {CascadeType.ALL})
   @JoinTable(
     name = "followed_billboards",
