@@ -11,13 +11,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 //@RequestMapping("/api/billboards")
 public class PostController {
-
-  @Autowired
-  private UserRepository userRepository;
-
-  @Autowired
-  private BillboardRepository billboardRepository;
-
   private static final Logger logger = LoggerFactory.getLogger(PostController.class);
-
 }
