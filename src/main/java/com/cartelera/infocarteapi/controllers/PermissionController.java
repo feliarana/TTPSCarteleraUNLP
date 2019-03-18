@@ -4,6 +4,7 @@ import com.cartelera.infocarteapi.model.Billboard;
 import com.cartelera.infocarteapi.model.Permission;
 import com.cartelera.infocarteapi.model.User;
 import com.cartelera.infocarteapi.repository.BillboardRepository;
+import com.cartelera.infocarteapi.repository.PermissionRepository;
 import com.cartelera.infocarteapi.repository.UserRepository;
 import com.cartelera.infocarteapi.util.DataResponse;
 import org.slf4j.Logger;
@@ -17,6 +18,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+import static java.util.Optional.empty;
+
 @RestController
 public class PermissionController {
   private static final Logger logger = LoggerFactory.getLogger(PermissionController.class);
@@ -27,19 +30,20 @@ public class PermissionController {
   @Autowired
   private BillboardRepository billboardRepository;
 
-  @DeleteMapping("/permissions/{user_id}/billboard/{billboard_id}")
+  @Autowired
+  private PermissionRepository permissionRepository;
+
+  @DeleteMapping("/permission/billboard/{billboard_id}/user/{user_id}")
   public DataResponse deletePermission(@PathVariable Long user_id, @PathVariable Long billboard_id ) {
 
     Optional<User> user = userRepository.findById(user_id);
-    Set<Permission> permissions = user.get().getPermissions();
-
     Optional<Billboard> billboard = billboardRepository.findById(billboard_id);
 
+    Optional<Permission> permission = permissionRepository.findByUserAndBillboard(billboard.get(), user.get());
+
     Boolean success = false;
-    if (permissions.contains(billboard.get())) {
-      permissions.remove(billboard.get());
-      user.get().setPermissions(permissions);
-      userRepository.save(user.get());
+    if (permission.isPresent()) {
+      permissionRepository.deleteById(permission.get().getId());
       success = true;
     }
     DataResponse response = new DataResponse ();
