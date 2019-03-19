@@ -63,7 +63,12 @@ INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description
 INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('Genial! Al fin publican los horarios.', '1', '3', current_timestamp);
 INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('Aprobeeee.', '2', '3', current_timestamp);
 INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('Uh tengo que recursar', '2', '3', current_timestamp);
-INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('APROBAMOS TTPS!!', '1', '3', current_timestamp);
+INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('Cuando empieza la materia?', '6', '2', current_timestamp);
+INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('Aprobeee', '7', '4', current_timestamp);
+INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('APROBAMOS TTPS!!!', '12', '4', current_timestamp);
+INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('APROBAMOS TTPS!!!', '12', '5', current_timestamp);
+INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('Cuando es el recuperatorio?', '10', '6', current_timestamp);
+INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('Ya tengo la tesis para presentar', '18', '3', current_timestamp);
 
 -- Agregamos seguidores a carteleras
 INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('2', '1');
