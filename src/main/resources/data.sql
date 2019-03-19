@@ -37,18 +37,18 @@ INSERT INTO public.billboards(created_at, title, description, image, user_id) VA
 INSERT INTO public.billboards(created_at, title, description, image, user_id) VALUES(current_timestamp, 'Cartelera 5to', 'Los heroes', 'https://www.wonderplugin.com/videos/demo-image0.jpg', '1');
 
 -- Agregamos publicaciones
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('1', true, current_timestamp, 'Horarios de primero', 'https://helpx.adobe.com/in/stock/how-to/visual-reverse-image-search/_jcr_content/main-pars/image.img.jpg/visual-reverse-image-search-v2_1000x560.jpg', 'Horarios 1', NULL, '3');
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('1', true, current_timestamp, 'Aprobaron casi todos', '', 'Resultados Adp', NULL, '3');
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('1', true, current_timestamp, 'Los felicito', '', 'Resultados Arq', NULL, '3');
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('1', true, current_timestamp, 'Volve en febrero', '', 'Resultados Org', NULL, '3');
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('2', true, current_timestamp, 'Si se puede', '', 'Horarios 2', NULL, '3');
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('2', true, current_timestamp, 'Resultados parcial 1era fecha', '', 'Resultados Ibd', NULL, '3');
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('2', true, current_timestamp, 'Muy bien', '', 'Resultados Ing1', NULL, '3');
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('2', true, current_timestamp, 'Falto t de n', '', 'Resultados Ayed', NULL, '3');
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('3', true, current_timestamp, 'Agarrate con concu', '', 'Horarios 3', NULL, '3');
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('3', true, current_timestamp, 'Probabilidades de aprobar', '', 'Resultados Mate 3', NULL, '3');
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('3', true, current_timestamp, 'Recursada nro 1920194', '', 'Resultados Redes', NULL, '3');
-INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('3', true, current_timestamp, 'Los mas copados', 'https://i0.wp.com/thehappening.com/wp-content/uploads/2016/12/perro-1.jpg?resize=620%2C420&ssl=1', 'Resultados TTPS Java', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('1', true, current_timestamp, 'Horarios de primero', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Horarios 1', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('1', true, current_timestamp, 'Aprobaron casi todos', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Resultados Adp', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('1', true, current_timestamp, 'Los felicito', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Resultados Arq', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('1', true, current_timestamp, 'Volve en febrero', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Resultados Org', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('2', true, current_timestamp, 'Si se puede', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Horarios 2', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('2', true, current_timestamp, 'Resultados parcial 1era fecha', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Resultados Ibd', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('2', true, current_timestamp, 'Muy bien', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Resultados Ing1', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('2', true, current_timestamp, 'Falto t de n', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Resultados Ayed', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('3', true, current_timestamp, 'Agarrate con concu', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Horarios 3', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('3', true, current_timestamp, 'Probabilidades de aprobar', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Resultados Mate 3', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('3', true, current_timestamp, 'Recursada nro 1920194', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Resultados Redes', NULL, '3');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('3', true, current_timestamp, 'Los mas copados', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Resultados TTPS Java', NULL, '3');
 
 -- Agregamos comentarios
 INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('Genial! Al fin publican los horarios.', '1', '3', current_timestamp);
@@ -61,3 +61,13 @@ INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('2', '1');
 INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('2', '2');
 INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('2', '3');
 INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('2', '4');
+INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('3', '2');
+INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('3', '3');
+INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('4', '1');
+INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('4', '2');
+INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('5', '2');
+INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('5', '3');
+INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('5', '4');
+INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('6', '3');
+INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('6', '4');
+INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('6', '5');
