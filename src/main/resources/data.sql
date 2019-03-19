@@ -37,7 +37,7 @@ INSERT INTO public.billboards(created_at, title, description, image, user_id) VA
 INSERT INTO public.billboards(created_at, title, description, image, user_id) VALUES(current_timestamp, 'Cartelera 5to', 'Los heroes', 'https://www.wonderplugin.com/videos/demo-image0.jpg', '1');
 INSERT INTO public.billboards(created_at, title, description, image, user_id) VALUES(current_timestamp, 'Informacion general', 'Informacion sobre horarios de las materias, inicio de cursada, examenes, finales, etc...', 'https://www.lovesignco.com/wp-content/uploads/Interior-example-image.jpg', '1');
 INSERT INTO public.billboards(created_at, title, description, image, user_id) VALUES(current_timestamp, 'Ofertas laborales', 'Ofertas de empleo de diferentes empresas relacionadas con la tecnologia', 'https://singularityhub.com/wp-content/uploads/2018/07/billboard-blank-outdoor-advertising-poster-night_1622x912_shutterstock_434071942.jpg', '1');
-INSERT INTO public.billboards(created_at, title, description, image, user_id) VALUES(current_timestamp, 'Eventos', 'Eventos de la Facultad de Informatica', 'https://ideasnuevas.net/wp-content/uploads/2019/01/3-1.jpg', '1');
+INSERT INTO public.billboards(created_at, title, description, image, user_id) VALUES(current_timestamp, 'Eventos', 'Eventos de la Facultad de Informatica', 'https://img.freepik.com/psd-gratis/diseno-fondo-abstracto_1297-87.jpg?size=626&ext=jpg', '1');
 
 -- Agregamos publicaciones
 INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('1', true, current_timestamp, 'Horarios de primero', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Horarios 1', NULL, '3');
