@@ -79,7 +79,7 @@ INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('2', '1');
 INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('2', '2');
 INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('2', '3');
 INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('2', '4');
-INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('2', '6');
+--INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('2', '6');
 INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('3', '2');
 INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('3', '3');
 INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('3', '5');
