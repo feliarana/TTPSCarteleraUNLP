@@ -14,7 +14,7 @@ INSERT INTO public.users (active, password, username, name, lastname, email, pho
 INSERT INTO public.users (active, password, username, name, lastname, email, photo) VALUES (true, '$2a$10$wzqz/gJMaySr4Vb7LOWx8eMQDt57fy5MuGVqaO1r58HNdcmYX/wd6', 'profesor2', 'Ron', 'Damon', 'don.ramon@info.com', 'https://cdne.diariocorreo.pe/thumbs/uploads/img/2017/07/06/dia-del-maestro-el-dia-que--jpg_604x0.jpg');
 INSERT INTO public.users (active, password, username, name, lastname, email, photo) VALUES (true, '$2a$10$wzqz/gJMaySr4Vb7LOWx8eMQDt57fy5MuGVqaO1r58HNdcmYX/wd6', 'profesor3', 'Maria', 'Fernandez', 'maria.fernandez@info.com', 'http://www.elperiodicodelafresneda.es/wp-content/uploads/2017/12/PROFESORA.jpg');
 INSERT INTO public.users (active, password, username, name, lastname, email, photo) VALUES (true, '$2a$10$wzqz/gJMaySr4Vb7LOWx8eMQDt57fy5MuGVqaO1r58HNdcmYX/wd6', 'profesor4', 'Don', 'Ramon', 'ramon@info.com', 'https://cdne.diariocorreo.pe/thumbs/uploads/img/2017/07/06/dia-del-maestro-el-dia-que--jpg_604x0.jpg');
-INSERT INTO public.users (active, password, username, name, lastname, email, photo) VALUES (true, '$2a$10$wzqz/gJMaySr4Vb7LOWx8eMQDt57fy5MuGVqaO1r58HNdcmYX/wd6', 'profesor5', 'Analia', 'Godoy', 'analia.godoy@info.com', 'http://www.elperiodicodelafresneda.es/wp-content/uploads/2017/12/PROFESORA.jpg');
+INSERT INTO public.users (active, password, username, name, lastname, email, photo) VALUES (true, '$2a$10$wzqz/gJMaySr4Vb7LOWx8eMQDt57fy5MuGVqaO1r58HNdcmYX/wd6', 'profesor5', 'Elizabeth', 'Perez', 'elizabeth@info.com', 'http://www.elperiodicodelafresneda.es/wp-content/uploads/2017/12/PROFESORA.jpg');
 
 -- Establecemos roles
 INSERT INTO public.users_roles(user_id, role_id) VALUES ('1', '1');
