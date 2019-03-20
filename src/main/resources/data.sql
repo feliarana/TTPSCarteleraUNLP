@@ -58,6 +58,7 @@ INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description
 INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('5', true, current_timestamp, 'Horarios de quinto', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Horarios 5', NULL, '1');
 INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('5', true, current_timestamp, 'Interesante', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Diseño de Experiencia de Usuario', NULL, '1');
 INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('5', true, current_timestamp, 'Por fin la tesis !!!', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Tesina de Licenciatura en Informática', NULL, '1');
+INSERT INTO public.posts(billboard_id, comments_enabled, created_at, description, image, title, updated_at, user_id) VALUES('7', true, current_timestamp, 'No habra clases por temas administrativos de la facultad', 'https://www.mollmanoutdoor.com/wp-content/uploads/2016/08/happy-billboard-min.jpg', 'Aviso importante', NULL, '1');
 
 -- Agregamos comentarios
 INSERT INTO public.comments(comment, post_id, user_id, created_at) VALUES('Genial! Al fin publican los horarios.', '1', '3', current_timestamp);
