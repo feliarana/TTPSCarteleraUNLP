@@ -97,4 +97,4 @@ INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('6', '3');
 INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('6', '4');
 INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('6', '5');
 INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('6', '7');
-INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('6', '8');
+-- INSERT INTO public.followed_billboards(user_id, billboard_id) VALUES('6', '8');
